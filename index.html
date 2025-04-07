@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Garden Plan Form</title>
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background: url("https://plus.unsplash.com/premium_photo-1663013324197-f74360b2356a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8a2l0Y2hlbiUyMGdhcmRlbnxlbnwwfHwwfHx8MA%3D%3D") no-repeat center center fixed;
+        background-size: cover;
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 40px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .form-heading {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.5rem;
+        text-align: center;
+        color: white;
+        margin-bottom: 10px;
+        text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+      }
+
+      .form-subheading {
+        font-size: 1.1rem;
+        text-align: center;
+        color: white;
+        margin-bottom: 30px;
+        max-width: 600px;
+      }
+
+      form {
+        background: transparent;
+        padding: 40px;
+        border-radius: 16px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        width: 100%;
+        max-width: 700px;
+        color: #1e3d10;
+        border: 2px solid #c2d4b2;
+        backdrop-filter: blur(8px);
+      }
+
+      form:hover {
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .section {
+        margin-bottom: 25px;
+        background: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      label {
+        font-weight: 600;
+        display: block;
+        margin-bottom: 8px;
+        font-family: "Playfair Display", serif;
+        font-size: 17px;
+        color: #204204;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      select {
+        width: 100%;
+        padding: 10px 6px;
+        margin-top: 5px;
+        border: 1px solid #b4c9a9;
+        border-radius: 8px;
+        font-size: 14px;
+        background-color: #f9fbf7;
+        transition: border 0.3s;
+      }
+
+      input:focus,
+      select:focus {
+        border-color: #6c9a50;
+        outline: none;
+      }
+
+      input[type="checkbox"],
+      input[type="radio"] {
+        margin-right: 8px;
+        transform: scale(1.1);
+      }
+
+      .option-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .option-group label {
+        font-weight: normal;
+        font-size: 14px;
+      }
+
+      button {
+        background-color: #08c531;
+        color: white;
+        padding: 14px 30px;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+        display: inline-block;
+        margin-top: 10px;
+      }
+
+      button:hover {
+        background-color: #e9913e;
+        transform: translateY(-2px);
+      }
+
+      #success-message {
+        display: none;
+        margin-top: 20px;
+        padding: 15px 20px;
+        background-color: #d6f5d6;
+        border: 1px solid #bef1be;
+        color: #023802;
+        border-radius: 10px;
+        font-size: 16px;
+        max-width: 700px;
+        width: 90%;
+        text-align: center;
+      }
+
+      @media (max-width: 600px) {
+        form {
+          padding: 25px;
+        }
+
+        .form-heading {
+          font-size: 2rem;
+        }
+
+        .form-subheading {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="form-heading"> Let's Grow Your Dream Garden!</h1>
+    <p class="form-subheading">Tell us a bit about your space & goals so we can help you grow 🌸</p>
+
+    <form id="gardenForm">
+      <div class="section">
+        <label>1. Your Name & Contact Details</label>
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="text" name="phone" placeholder="Phone (Optional)" />
+      </div>
+
+      <div class="section">
+        <label>2. What space do you have?</label>
+        <div class="option-group">
+          <label><input type="checkbox" name="space[]" value="Balcony" /> Balcony</label>
+          <label><input type="checkbox" name="space[]" value="Terrace" /> Terrace</label>
+          <label><input type="checkbox" name="space[]" value="Ground/Backyard" /> Ground/Backyard</label>
+          <label><input type="checkbox" name="space[]" value="Windowsill" /> Windowsill</label>
+          <label><input type="checkbox" name="space[]" value="Indoor Space" /> Indoor Space</label>
+          <label><input type="checkbox" name="space[]" value="Vertical Garden" /> Vertical Garden</label>
+        </div>
+      </div>
+
+      <div class="section">
+        <label>3. What would you like to grow?</label>
+        <div class="option-group">
+          <label><input type="checkbox" name="grow[]" value="Vegetables" /> Vegetables</label>
+          <label><input type="checkbox" name="grow[]" value="Herbs" /> Herbs</label>
+          <label><input type="checkbox" name="grow[]" value="Fruits" /> Fruits</label>
+          <label><input type="checkbox" name="grow[]" value="Flowers" /> Flowers</label>
+        </div>
+      </div>
+
+      <div class="section">
+        <label>4. What’s your experience level?</label>
+        <div class="option-group">
+          <label><input type="radio" name="experience" value="Beginner" /> Beginner</label>
+          <label><input type="radio" name="experience" value="Intermediate" /> Intermediate</label>
+          <label><input type="radio" name="experience" value="Expert" /> Expert</label>
+        </div>
+      </div>
+
+      <div class="section">
+        <label>5. Any specific plants you want to grow?</label>
+        <input type="text" name="specific_plants" placeholder="e.g., Tomatoes, Mint, Lemongrass" />
+      </div>
+
+      <div class="section">
+        <label>6. Do you need seeds?</label>
+        <div class="option-group">
+          <label><input type="radio" name="seeds" value="yes" /> Yes</label>
+          <label><input type="radio" name="seeds" value="no" /> No</label>
+        </div>
+      </div>
+
+      <div class="section">
+        <label>7. Do you need fertilizer?</label>
+        <div class="option-group">
+          <label><input type="radio" name="fertilizer" value="yes" /> Yes</label>
+          <label><input type="radio" name="fertilizer" value="no" /> No</label>
+        </div>
+      </div>
+
+      <div class="section">
+        <label>8. Do you need potting mixes?</label>
+        <div class="option-group">
+          <label><input type="radio" name="mixes" value="yes" /> Yes</label>
+          <label><input type="radio" name="mixes" value="no" /> No</label>
+        </div>
+      </div>
+
+      <div class="section">
+        <label>9. Do you need pots?</label>
+        <div class="option-group">
+          <label><input type="radio" name="pots" value="yes" /> Yes</label>
+          <label><input type="radio" name="pots" value="no" /> No</label>
+        </div>
+      </div>
+
+      <div class="section">
+        <label>10. Do you need just guidance?</label>
+        <div class="option-group">
+          <label><input type="radio" name="guidance" value="yes" /> Yes</label>
+          <label><input type="radio" name="guidance" value="no" /> No</label>
+        </div>
+      </div>
+
+      <button type="submit">🌿 Submit & Get My Garden Plan</button>
+    </form>
+
+    <div id="success-message">
+      Thank you! Your garden plan request has been submitted successfully. 🌸
+    </div>
+
+    <script>
+      document.getElementById("gardenForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        const now = new Date();
+        const timestamp = now.toLocaleString();
+        formData.append("Timestamp", timestamp);
+
+        fetch(
+          "https://script.google.com/macros/s/AKfycbyl5fjnYA3GGEP-sYf63Bpd8jk8V7MJI00ahUPxH05v9M0rfdV88ZZr6gRTyCCbDYFexg/exec",
+          {
+            method: "POST",
+            body: formData,
+          }
+        ).then((res) => {
+          if (res.ok) {
+            document.getElementById("gardenForm").reset();
+            const msg = document.getElementById("success-message");
+            msg.style.display = "block";
+            msg.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
+
+
